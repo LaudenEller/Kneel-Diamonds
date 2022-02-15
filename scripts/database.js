@@ -28,12 +28,18 @@ const database = {
         { id: 4, metal: "Platinum", price: 795.45 },
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
+    shapes: [
+        { id: 1, shape: "Ring" },
+        { id: 2, shape: "Earring" },
+        { id: 3, shape: "Necklace" }
+    ],
     customOrders: [
         {
             id: 1,
             metalId: 3,
             sizeId: 2,
             styleId: 3,
+            shapeId: 1,
             timestamp: 1614659931693
         },
     ]
@@ -55,6 +61,10 @@ export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }
 
+export const getShapes = () => {
+    return database.shapes.map(shape => ({...shape}))
+}
+
 // export functions that set state
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
@@ -66,6 +76,10 @@ export const setSize = (id) => {
 
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+
+export const setShape = (id) => {
+    database.orderBuilder.shapeId = id
 }
 
 export const addCustomOrder = () => {

@@ -1,11 +1,42 @@
 /* You need to create the rest of styles for the layout shown */
 
 .options {
-    flex-basis: 24%;
+    display: flex;
+    flex-direction: column;
     margin: 0 2rem;
     border: 1px dashed dodgerblue;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    width: 30%;
 }
 
+.choices {
+    display: flex;
+    flex-direction: row;
+}
+
+.customOrders {
+    border: 1px dashed dodgerblue;
+
+}
+
+.itemShapeButtons {
+    display: flex;
+    flex-direction: row;
+}
+/* 
+.choices__metals_options {
+    width: 30%;
+    border: 1px dashed dodgerblue;
+}
+
+.choices__sizes_options {
+    width: 30%;
+    border: 1px dashed dodgerblue;
+}
+
+.choices__styles_options {
+    width: 30%;
+    border: 1px dashed dodgerblue;
+} */

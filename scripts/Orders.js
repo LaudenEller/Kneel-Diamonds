@@ -1,4 +1,4 @@
-import { getOrders, getMetals, getSizes, getStyles } from "./database.js"
+import { getOrders, getMetals, getSizes, getStyles, getShapes } from "./database.js"
 
 // build a order list item, pass order as argument.
 const buildOrderListItem = (order) => {
@@ -29,7 +29,23 @@ const buildOrderListItem = (order) => {
     )
 
     totalCost += foundSize.price
+    
+    const shapes = getShapes()
+    const foundShape = shapes.find(
+        (shape) => {
+            return (shape.id === order.shapeId)
+        })
 
+        if (foundShape.id === 1 ) {
+            totalCost = totalCost
+        }
+        else if (foundShape.id === 2 ) {
+            totalCost = totalCost * 2
+        }
+        else if (foundShape.id === 3 ) {
+            totalCost = totalCost * 4
+        }
+        
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
         currency: "USD"
@@ -60,4 +76,3 @@ export const Orders = () => {
 
     return html
 }
-

@@ -1,4 +1,4 @@
-import { getShapes, setShape } from "./database.js"
+import { getShapes, setShape } from "./DataAccess.js"
 
 const shapes = getShapes()
 
